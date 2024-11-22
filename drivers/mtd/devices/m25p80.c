@@ -351,7 +351,7 @@ static const struct spi_device_id m25p_ids[] = {
 	{"m25p40"},	{"m25p80"},	{"m25p16"},	{"m25p32"},
 	{"m25p64"},	{"m25p128"},
 	{"w25x80"},	{"w25x32"},	{"w25q32"},	{"w25q32dw"},
-	{"w25q80bl"},	{"w25q128"},	{"w25q256"},
+	{"w25q80bl"},	{"w25q128"},	{"w25q256"},	{"xt25f128b"},
 
 	/* Flashes that can't be detected using JEDEC */
 	{"m25p05-nonjedec"},	{"m25p10-nonjedec"},	{"m25p20-nonjedec"},
@@ -359,6 +359,7 @@ static const struct spi_device_id m25p_ids[] = {
 	{"m25p32-nonjedec"},	{"m25p64-nonjedec"},	{"m25p128-nonjedec"},
 
 	/* Everspin MRAMs (non-JEDEC) */
+	{ "mr25h128" }, /* 128 Kib, 40 MHz */
 	{ "mr25h256" }, /* 256 Kib, 40 MHz */
 	{ "mr25h10" },  /*   1 Mib, 40 MHz */
 	{ "mr25h40" },  /*   4 Mib, 40 MHz */
