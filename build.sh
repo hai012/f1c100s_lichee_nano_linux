@@ -1,7 +1,7 @@
-#make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- O=build licheepi_nano_defconfig
-#make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- O=build saveconfig
-#make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- O=build defconfig
-#make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- O=build menuconfig
+# make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- O=build licheepi_nano_defconfig
+# make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- O=build menuconfig
+# cp  build/.config defconfig
+# cp defconfig build/.config
 
 make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- O=build -j16 zImage
 make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- O=build -j16 suniv-f1c100s-licheepi-nano.dtb

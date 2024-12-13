@@ -28,6 +28,18 @@
 		regulator-min-microvolt = <3300000>;
 		regulator-max-microvolt = <3300000>;
 	};
+
+    uartwifi0: uart_wifi0 {
+        status = "okay";
+        compatible = "ghj,uart_wifi";
+        pinctrl-names = "default";
+        pinctrl-0 = <&esp8266_reset_pins>, <&esp8266_intr_pin>;
+        gpios = <&pio 4 11  GPIO_ACTIVE_HIGH>, //PE11 reset
+                <&pio 4 12  GPIO_ACTIVE_HIGH>; //PE12 intr
+        tty_name="ttyS2";
+        ssid="";
+        password="";
+    };
 };
 
 &mmc0 {
@@ -89,7 +101,16 @@
 	pinctrl-0 = <&uart0_pins_a>;
 	status = "okay";
 };
-
+&uart1 {
+	pinctrl-names = "default";
+	pinctrl-0 = <&uart1_pins_a>;
+	status = "okay";
+};
+&uart2 {
+	pinctrl-names = "default";
+	pinctrl-0 = <&uart2_pins>, <&uart2_rts_cts_pins>;
+	status = "okay";
+};
 &usb_otg {
 	dr_mode = "otg";
 	status = "okay";

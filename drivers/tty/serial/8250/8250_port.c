@@ -2647,11 +2647,13 @@ serial8250_do_set_termios(struct uart_port *port, struct ktermios *termios,
 	 * deasserted when the receive FIFO contains more characters than
 	 * the trigger, or the MCR RTS bit is cleared.
 	 */
-	if (up->capabilities & UART_CAP_AFE) {
+	//if (up->capabilities & UART_CAP_AFE) {
 		up->mcr &= ~UART_MCR_AFE;
-		if (termios->c_cflag & CRTSCTS)
+		if (termios->c_cflag & CRTSCTS) {
 			up->mcr |= UART_MCR_AFE;
-	}
+			pr_err("up->mcr |= UART_MCR_AFE");
+		}
+	//}
 
 	/*
 	 * Update the per-port timeout.

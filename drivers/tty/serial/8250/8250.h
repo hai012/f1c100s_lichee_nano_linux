@@ -145,6 +145,8 @@ void serial8250_em485_destroy(struct uart_8250_port *p);
 
 static inline void serial8250_out_MCR(struct uart_8250_port *up, int value)
 {
+	//dump_stack();
+	pr_err("serial8250_out_MCR,value=%d",value);
 	serial_out(up, UART_MCR, value);
 }
 

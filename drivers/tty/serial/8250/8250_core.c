@@ -1049,6 +1049,9 @@ int serial8250_register_8250_port(struct uart_8250_port *up)
 						&uart->capabilities);
 
 			serial8250_apply_quirks(uart);
+			pr_err("serial8250_register_8250_port: capabilities 0x%x",uart->capabilities);
+			pr_err("serial8250_register_8250_port: port.flags 0x%x",uart->port.flags);
+			pr_err("serial8250_register_8250_port: port.type 0x%x",uart->port.type);
 			ret = uart_add_one_port(&serial8250_reg,
 						&uart->port);
 			if (ret == 0)

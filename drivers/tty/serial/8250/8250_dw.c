@@ -392,14 +392,15 @@ static void dw8250_setup_port(struct uart_port *p)
 		return;
 
 	/* Select the type based on fifo */
-	if (reg & DW_UART_CPR_FIFO_MODE) {
-		p->type = PORT_16550A;
-		p->flags |= UPF_FIXED_TYPE;
-		p->fifosize = DW_UART_CPR_FIFO_SIZE(reg);
+	//if (reg & DW_UART_CPR_FIFO_MODE) {
+	//	p->type = PORT_16550A;
+	//	p->flags |= UPF_FIXED_TYPE;
+	//	p->fifosize = DW_UART_CPR_FIFO_SIZE(reg);
+		p->fifosize = 64;
 		up->capabilities = UART_CAP_FIFO;
-	}
+	//}
 
-	if (reg & DW_UART_CPR_AFCE_MODE)
+	//if (reg & DW_UART_CPR_AFCE_MODE)
 		up->capabilities |= UART_CAP_AFE;
 
 	if (reg & DW_UART_CPR_SIR_MODE)
